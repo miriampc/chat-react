@@ -1,0 +1,29 @@
+{
+  "name": "chat-react",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "",
+    "build": "babel index.js --presets react --out-dir=build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/miriampc/chat-react.git"
+  },
+  "keywords": [],
+  "author": "@miriampc",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/miriampc/chat-react/issues"
+  },
+  "homepage": "https://github.com/miriampc/chat-react#readme",
+  "dependencies": {
+    "express": "^4.16.2",
+    "socket.io": "^2.0.4"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-react": "^6.24.1"
+  }
+}
