@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "",
-    "build": "babel index.js --presets react --out-dir=build"
+    "start": "webpack-dev-server"
   },
   "repository": {
     "type": "git",
