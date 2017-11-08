@@ -14,11 +14,11 @@ const ContactRow = (props) => {
     )
 }
 
-const ContactRowConRedux = connect(
+const ContactRowWithRedux = connect(
     null,
     {
         selectContact: contactSelected
     }
 )(ContactRow)
 
-export default ContactRowConRedux
+export default ContactRowWithRedux

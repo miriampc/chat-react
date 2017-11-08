@@ -3,12 +3,12 @@ import HeaderPanel from "./HeaderPanel"
 import SearchBar from "./SearchBar"
 import ListContacts from "./ListContacts"
 
-const PanelLeft = ({ contacts }) => {
+const PanelLeft = () => {
     return (
         <div className="panel-left">
             <HeaderPanel />
             <SearchBar />
-            <ListContacts contacts={contacts} />
+            <ListContacts />
         </div>
     );
 }
