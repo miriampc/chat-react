@@ -1,11 +1,37 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
-const PanelRight =() => {
-    return (
-        <div className="panel-right">
-            Panel chats
-        </div>
-    )
+class PanelRight extends React.Component {
+    renderChat() {
+        if (!this.props.contactSelected) {
+            return <div className="panel-right"> Seleccione a un contacto </div>
+        }
+
+        const { name, date } = this.props.contactSelected
+
+        return (
+            <div className="panel-right">
+                <p>{name}</p>
+                <p>{date}</p>
+            </div>
+        )
+    }
+    render() {
+        console.log('Props chat', this.props.contactSelected)
+        return this.renderChat()
+    }
 }
 
-export default PanelRight
+const mapStateToProps = (state) => {
+    const { contactSelected } = state
+
+    return {
+        contactSelected
+    }
+}
+
+const PanelRightWithRedux = connect(
+    mapStateToProps
+)(PanelRight)
+
+export default PanelRightWithRedux
