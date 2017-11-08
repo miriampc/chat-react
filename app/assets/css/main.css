@@ -26,6 +26,10 @@ body{
   padding: 0 16px;
 }
 
+.header-panel > div{
+  flex:1;
+}
+
 .header-panel, .search{
   height: 60px;
 }

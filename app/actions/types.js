@@ -1,0 +1,1 @@
+export const CONTACT_SELECTED = 'CONTACT_SELECTED'

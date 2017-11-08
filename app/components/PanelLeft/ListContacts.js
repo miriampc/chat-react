@@ -1,16 +1,32 @@
 import React from 'react'
 import ContactRow from './ContactRow'
+import { connect } from 'react-redux'
 
-const ListContacts = ({ contacts }) => {
-    const rows = [];
-    contacts.forEach(contact => {
-        rows.push(<ContactRow contact={contact} key={contact.name} />);
-    });
-    return (
-        <div className="panel-contacts">
-            {rows}
-        </div>
-    );
+class ListContacts extends React.Component {
+    render(){
+        console.log("List",this.props)
+        return (
+            <div className="panel-contacts">
+                {this.props.contacts.map(contact => {
+                    return (
+                        <ContactRow key={contact.name} contact={contact} />
+                    )
+                })}
+            </div>
+        )
+    }
 }
 
-export default ListContacts
+const mapStateToProps = (state) => {
+    const { contacts } = state
+
+    return {
+        contacts,
+    }
+}
+
+const ListContactsWithRedux = connect(
+    mapStateToProps
+)(ListContacts)
+
+export default ListContactsWithRedux
