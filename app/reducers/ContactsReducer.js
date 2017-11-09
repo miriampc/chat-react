@@ -1,3 +1,18 @@
+/*
+  const CONTACTS = [
+    {name: 'Pedro Perez', img: 'cat.jpg', date: 'Ayer', city: 'Lima'},
+    {name: 'Marta Perez', img: 'cat.jpg', date: 'Doming',city: 'Lima'},
+    {name: 'Ana Perez', img: 'cat.jpg', date: '24/10/17', city: 'Lima'},
+    {name: 'Sara Perez', img: 'cat.jpg', date: 'Domingo', city: 'Lima'},
+    {name: 'Pedro Perez 1', img: 'cat.jpg', date: 'Ayer', city: 'Lima'},
+    {name: 'PMarta Perez 2', img: 'cat.jpg', date: 'Doming', city: 'Lima'},
+    {name: 'Ana Perez3', img: 'cat.jpg', date: '24/10/17', city: 'Lima'},
+    {name: 'Sara Perez4', img: 'cat.jpg', date: 'Domingo', city: 'Lima'},
+    {name: 'Sara Perez6', img: 'cat.jpg', date: 'Domingo', city: 'Lima'},
+    {name: 'Pablo Perez5', img: 'cat.jpg', date: 'Lunes', city: 'Lima'}
+  ];
+ */
+
 const getJSON = (url, callback) => {
     const xhr = new XMLHttpRequest();
     xhr.open('GET', url, true);
@@ -9,32 +24,13 @@ const getJSON = (url, callback) => {
     xhr.send();
 };
 
-let CONTACTS = [ {name: 'Pedro Perez', img: 'cat.jpg', date: 'Ayer'},
-    {name: 'Marta Perez', img: 'cat.jpg', date: 'Doming'},
-    {name: 'Ana Perez', img: 'cat.jpg', date: '24/10/17'}];
-
-/*
-const CONTACTS = [
-    {name: 'Pedro Perez', img: 'cat.jpg', date: 'Ayer'},
-    {name: 'Marta Perez', img: 'cat.jpg', date: 'Doming'},
-    {name: 'Ana Perez', img: 'cat.jpg', date: '24/10/17'},
-    {name: 'Sara Perez', img: 'cat.jpg', date: 'Domingo'},
-    {name: 'Pedro Perez 1', img: 'cat.jpg', date: 'Ayer'},
-    {name: 'PMarta Perez 2', img: 'cat.jpg', date: 'Doming'},
-    {name: 'Ana Perez3', img: 'cat.jpg', date: '24/10/17'},
-    {name: 'Sara Perez4', img: 'cat.jpg', date: 'Domingo'},
-    {name: 'Sara Perez6', img: 'cat.jpg', date: 'Domingo'},
-    {name: 'Pablo Perez5', img: 'cat.jpg', date: 'Lunes'}
-];
-*/
+const CONTACTS =[]
 
 getJSON('https://randomuser.me/api/?results=10&nat=es',
     (err, data) => {
-        (err !== null) ? console.log('Something went wrong: ' + err) : data.results.map(e => CONTACTS.push({ name: e.name.first + ' ' + e.name.last, img: e.picture.thumbnail, date: e.location.city }));
-});
+        (err !== null) ? console.log('Something went wrong: ' + err) : data.results.map(e => CONTACTS.push({ name: e.name.first + ' ' + e.name.last, city: e.location.city,img: e.picture.thumbnail, date: e.dob.substr(0,10).replace(/-/g,"/") }));  });
 
-
-export default ( state = CONTACTS, action) => {
+export default (state = CONTACTS, action) => {
     switch (action.type) {
         default:
             return state

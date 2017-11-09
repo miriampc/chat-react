@@ -3,6 +3,20 @@ import ContactRow from './ContactRow'
 import { connect } from 'react-redux'
 
 class ListContacts extends React.Component {
+    constructor(props) {
+        super(props)
+    }
+
+    componentWillMount() {
+        fetch('https://randomuser.me/api/?results=10&nat=es')
+            .then((response) => {
+                return response.json()
+            })
+            .then((contacts) => {
+                this.setState({ contacts: contacts })
+            })
+    }
+
     render(){
         console.log("List",this.props)
         return (
