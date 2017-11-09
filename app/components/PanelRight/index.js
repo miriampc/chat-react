@@ -1,5 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import HeaderPanel from "./HeaderPanel"
+import InputMessage from "./InputMessage"
 
 class PanelRight extends React.Component {
     renderChat() {
@@ -10,9 +12,15 @@ class PanelRight extends React.Component {
         const { name, date } = this.props.contactSelected
 
         return (
-            <div className="panel-right">
-                <p>{name}</p>
-                <p>{date}</p>
+            <div className="">
+                <div >
+                    <HeaderPanel nameContact={name} />
+                </div>
+                <div className="panel-right">                    
+                    <p>{name}</p>
+                    <p>{date}</p>
+                </div>
+                <InputMessage />
             </div>
         )
     }
