@@ -8,7 +8,9 @@ const ContactRow = (props) => {
     return (
         <div className="contact" onClick={() => props.selectContact(contact)}>
             <img src={contact.img} alt="" className="avatar"/>
-            <div className="contact-name">{contact.name}</div>
+            <div className="contact-name">{contact.name}
+                <div className="contact-city">{contact.city}</div>
+            </div>
             <div className="contact-date">{contact.date}</div>
         </div>
     )
