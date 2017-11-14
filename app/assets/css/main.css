@@ -87,7 +87,7 @@ body{
 /*styles panel-right */
 .panel-right{
   width: 70%;
-  height: 100vh;
+  height: calc(100vh - 120px);
   background: #dbeede;
   overflow-y: scroll;
 }
