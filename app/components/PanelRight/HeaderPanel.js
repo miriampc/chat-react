@@ -1,12 +1,12 @@
 import React from 'react'
 
-const HeaderPanel = (props) => {
-    console.log("aki propss",props);
+const HeaderPanel = ({nameContact, imgContact}) => {
     return(
-        <div className="header-panel">
+        <div className="header-panel">            
+            <img src={imgContact} alt="foto perfil" className="avatar"/>     
             <div>
-                <img src="cat.jpg" className="avatar"/>
-                <span>{props.nameContact}</span>
+                <span className="contact-name">{nameContact}</span>
+                <p className="contact-name">Online</p>
             </div>
             <img src="icons-right.png"/>
         </div>
