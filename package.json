@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server",
     "build": "webpack --config webpack.config.prod.js --progress --profile --colors",
-    "deploy": "npm run-script build && gh-pages -d dist"
+    "deploy": "npm run-script build && gh-pages -d ./dist -b gh-pages"
   },
   "repository": {
     "type": "git",
