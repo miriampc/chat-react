@@ -1,9 +1,8 @@
 import { combineReducers } from 'redux'
-
-import ContactsReducer from './ContactsReducer'
+import AppReducer from './AppReducer'
 import ContactSelectedReducer from './ContactSelectedReducer'
 
 export default combineReducers({
-    contacts: ContactsReducer,
+    AppReducer,
     contactSelected: ContactSelectedReducer
 })

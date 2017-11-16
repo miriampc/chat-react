@@ -32,15 +32,18 @@ class ListContacts extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-    const { contacts } = state
-
+    const {
+        AppReducer: {
+            filteredContacts,
+            headerLeft
+        }
+    } = state
     return {
-        contacts,
+        contacts: filteredContacts,
+        headerLeft
     }
 }
 
-const ListContactsWithRedux = connect(
-    mapStateToProps
-)(ListContacts)
+const ListContactsWithRedux = connect(mapStateToProps)(ListContacts)
 
 export default ListContactsWithRedux
