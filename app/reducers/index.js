@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux'
-
-import ContactsReducer from './ContactsReducer'
+import AppReducer from './AppReducer'
 import ContactSelectedReducer from './ContactSelectedReducer'
 import messageValueReducer from './MessageValueReducer'
 
 export default combineReducers({
-    contacts: ContactsReducer,
+    AppReducer,
     contactSelected: ContactSelectedReducer,
     messageValue: messageValueReducer
 })
+
