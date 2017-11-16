@@ -1,10 +1,21 @@
 import React from 'react'
-import InputMessage from "./InputMessage"
+import { connect } from 'react-redux'
+// import InputMessage from "./InputMessage"
 
-const Messages = () => {
-    return (
-        <div>
-            
-        </div>
-    )
+class Messages extends React.Component {
+    // constructor(props) {
+    //     super(props)
+    //     console.log(this.props.messageValue);
+    // }
+    
+    render() {
+        console.log(this.props.messageValue);
+        return (
+            <div className="message">
+                fdsfs
+            </div>
+        )
+    }
 }
+
+export default Messages

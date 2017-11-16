@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import HeaderPanel from "./HeaderPanel"
 import InputMessage from "./InputMessage"
+import Messages from "./Messages"
 
 class PanelRight extends React.Component {
     renderChat() {
@@ -12,9 +13,10 @@ class PanelRight extends React.Component {
                 <img src="bg-right.png"/>
             </div>)            
         }
-
+        console.log('aki',this.props.messageValue);
+        // const {value} = this.props.messageValue;
         const { name, date, img} = this.props.contactSelected
-
+        
         return (
             <div className="">
                 <div >
@@ -23,7 +25,7 @@ class PanelRight extends React.Component {
                 <div className="panel-right">                    
                     <p>{name}</p>
                     <p>{date}</p>
-                    {/* <Messages/> */}
+                    <Messages />
                 </div>
                 <InputMessage />
             </div>

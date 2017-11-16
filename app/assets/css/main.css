@@ -117,3 +117,10 @@ body{
   border: none;
   padding-left: 10px;
 }
+
+.message {
+  padding: 10px 14px;
+  background: #daf893;
+  border-radius: 7px;
+  width: 30%;
+}
