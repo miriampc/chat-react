@@ -8,12 +8,12 @@ module.exports = {
     './app/index.js'
   ],
   output: {
-    path: resolve(__dirname, 'public'),
+    path: resolve(__dirname, 'dist'),
     publicPath: '/',
     filename: 'bundle.js',
   },
   devServer: {
-    contentBase: resolve(__dirname, 'public'),
+    contentBase: resolve(__dirname, 'dist'),
   },
   module: {
     rules: [
@@ -43,7 +43,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: resolve(__dirname, 'public', 'index.html'),
+      template: resolve(__dirname, 'app', 'index.html'),
       filename: 'index.html'
     }),
     new OpenBrowserWebpackPlugin({
