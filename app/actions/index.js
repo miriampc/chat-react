@@ -5,6 +5,13 @@ import {
 } from './types'
 
 // ACTIONS CREATORS
+export const filterContactsName = (text) => {
+    return {
+        type: FILTER_CONTACTS_NAME,
+        payload: text
+    }
+}
+
 export const contactSelected = (contact) => {
   console.log('ActionCreator contactSelected', contact)
   return {
@@ -14,15 +21,9 @@ export const contactSelected = (contact) => {
 }
 
 export const messageValue = (value) => {
-  console.log('message value', value);
-  return {
-    type: MESSAGE_VALUE,
-    payload: value
-  }
-
-export const filterContactsName = (text) => {
+    console.log('message value', value);
     return {
-        type: FILTER_CONTACTS_NAME,
-        payload: text
+        type: MESSAGE_VALUE,
+        payload: value
     }
 }

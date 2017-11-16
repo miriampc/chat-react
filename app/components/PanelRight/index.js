@@ -10,7 +10,7 @@ class PanelRight extends React.Component {
             return (
             <div className="panel-right">
                 <p>Seleccione a un contacto</p>
-                <img src="bg-right.png"/>
+                <img src="https://image.ibb.co/fW7WHm/bg_right.png"/>
             </div>)            
         }
         console.log('aki',this.props.messageValue);

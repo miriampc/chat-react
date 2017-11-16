@@ -8,7 +8,7 @@ const HeaderPanel = ({nameContact, imgContact}) => {
                 <span className="contact-name">{nameContact}</span>
                 <p className="contact-name">Online</p>
             </div>
-            <img src="icons-right.png"/>
+            <img src="https://image.ibb.co/e5Udxm/icons_right.png"/>
         </div>
     );
 }

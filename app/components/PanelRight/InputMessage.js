@@ -29,7 +29,7 @@ class InputMessage extends React.Component {
         const {messageVal} = this.enterMessage;
         return (
             <div className="footer-panel">
-                <img src="face.png" className="avatar"/>           
+                <img src="https://image.ibb.co/mPR8xm/face.png" className="avatar"/>
                 <input
                     id="message-text"
                     type="text"
@@ -38,7 +38,7 @@ class InputMessage extends React.Component {
                     onChange={this.eventChange}
                     onKeyUp={this.enterMessage}
                 />
-                <img src="microfono.png" className=""/>
+                <img src="https://image.ibb.co/kepdxm/microfono.png" className=""/>
             </div>
         )
     }    
