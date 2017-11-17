@@ -5,6 +5,7 @@ import { contactSelected } from '../../actions'
 const ContactRow = (props) => {
     const { contact } = props
     console.log(props)
+    //console.log(contactSelected)
     return (
         <div className="contact" onClick={() => props.selectContact(contact)}>
             <img src={contact.img} alt="" className="avatar"/>
@@ -22,5 +23,5 @@ const ContactRowWithRedux = connect(
         selectContact: contactSelected
     }
 )(ContactRow)
-
+console.log('row',ContactRow)
 export default ContactRowWithRedux
