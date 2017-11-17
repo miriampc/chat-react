@@ -1,8 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import HeaderPanel from "./HeaderPanel"
-import InputMessage from "./InputMessage"
+// import InputMessage from "./InputMessage"
 import Messages from "./Messages"
+import FooterPanel from './Footerpanel'
 
 class PanelRight extends React.Component {
     renderChat() {
@@ -25,9 +26,9 @@ class PanelRight extends React.Component {
                 <div className="panel-right">                    
                     <p>{name}</p>
                     <p>{date}</p>
-                    <Messages />
+                    <Messages message = ''/>
                 </div>
-                <InputMessage />
+                <FooterPanel />
             </div>
         )
     }

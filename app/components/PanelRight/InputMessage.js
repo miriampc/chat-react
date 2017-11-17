@@ -1,12 +1,12 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { messageValue } from '../../actions'
-import Messages from "./Messages"
+
 
 class InputMessage extends React.Component {
     constructor (props) {
         super(props);
-        this.state = {value: 'dsds'};    
+        this.state = {value: ''};    
         this.eventChange = this.eventChange.bind(this);
         this.enterMessage = this.enterMessage.bind(this);
     }
@@ -18,34 +18,30 @@ class InputMessage extends React.Component {
     enterMessage (event) {        
         if(event.keyCode == 13){
             alert('A name was submitted: ' + this.state.value);
-            console.log("mesage",this.state.value);
-            // const {messageVal} = this.state.value;
-            event.preventDefault();    
-            return this.state.value      
+            event.preventDefault();      
         }        
     }
-    
+    componentWillMount(event) {
+        this.setState({value: event.target.value});
+    }
     render(){
-        const {messageVal} = this.enterMessage;
-        return (
-            <div className="footer-panel">
-                <img src="face.png" className="avatar"/>           
-                <input
-                    id="message-text"
-                    type="text"
-                    placeholder="Type a message"
-                    value={messageVal}
-                    onChange={this.eventChange}
-                    onKeyUp={this.enterMessage}
-                />
-                <img src="microfono.png" className=""/>
-            </div>
+        //const {messageVal} = this.state;
+        return (                   
+            <input
+                id="message-text"
+                type="text"
+                placeholder="Type a message"
+                //value={this.componentWillMount}
+                onChange={this.componentWillMount}
+                onKeyUp={this.enterMessage}
+            />
         )
     }    
 }
 
-const mapStateToProps = value => {
+const mapStateToProps = (value) => {
     const {messageVal} = value
+    console.log(value);
     return {messageVal}
 }
 const InputMessageWithRedux = connect( 
